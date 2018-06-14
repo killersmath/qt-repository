@@ -22,20 +22,45 @@ Item{
                     width: imgContainer.width
                     height: imgContainer.height
                     Rectangle{
+                        property int innerWidth: imgContainer.width - imgContainer.border.width * 2
+                        property int innerHeight: imgContainer.width - imgContainer.border.width * 2
                         id: rectContainer
-                        width: parent.width
-                        height: parent.height
+                        width: innerWidth
+                        height: 0
                         anchors.bottom: parent.bottom
+                        anchors.left: parent.left
+                        anchors.margins: imgContainer.border.width
                         clip: true
                         color: "transparent"
                         Rectangle {
                             id: rectMask
                             anchors.bottom: parent.bottom
-                            anchors.left: parent.left
-                            anchors.right: parent.right
-                            anchors.margins: imgContainer.border.width
-                            height: imgContainer.height - imgContainer.border.width * 2
+                            width:  rectContainer.innerWidth
+                            height: rectContainer.innerHeight
                             radius: Math.max(0, root.radius - imgContainer.border.width)
+                        }
+
+                        SequentialAnimation{
+                            running: img.status == Image.Ready
+                            loops: Animation.Infinite
+
+                            NumberAnimation{
+                                target: rectContainer
+                                properties: "height"
+                                from: 0
+                                to: rectContainer.innerHeight
+                                duration: 5000
+                            }
+                            PauseAnimation{
+                                duration: 1000
+                            }
+                            NumberAnimation{
+                                target: rectContainer
+                                properties: "height"
+                                from: rectContainer.innerHeight
+                                to: 0
+                                duration: 5000
+                            }
                         }
                     }
                 }
