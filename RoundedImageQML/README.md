@@ -1,8 +1,8 @@
 # Rounded Image
 This is a preview of how you can implement a mask and animation to stylize your image container.
 
-## Prequisites
- * Qt 5.*
+## Prerequisites
+ * Qt 5.6 or better
  * Qt QML Module
  
 ### Documentation
