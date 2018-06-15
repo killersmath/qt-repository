@@ -23,7 +23,7 @@ Item{
                     height: imgContainer.height
                     Rectangle{
                         property int innerWidth: imgContainer.width - imgContainer.border.width * 2
-                        property int innerHeight: imgContainer.width - imgContainer.border.width * 2
+                        property int innerHeight: imgContainer.height - imgContainer.border.width * 2
                         id: rectContainer
                         width: innerWidth
                         height: 0
