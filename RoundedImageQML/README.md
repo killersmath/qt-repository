@@ -5,7 +5,19 @@ This is a preview of how you can implement a mask and animation to stylize your 
  * Qt 5.*
  * Qt QML Module
  
- ## Demo
+### Documentation
+
+Rounded Image Component supports all Item qml Type proprities changes and some extra proprieties: 
+
+* [Item Qml Documentation](http://doc.qt.io/qt-5/qml-qtquick-item.html)
+* radius: real
+* border
+  * border.width: int
+  * border.color: color
+* backgroundcolor: color - set color of image container
+* source: url
+
+ ## Demonstration
  
 ```
 RoundedImage{
@@ -19,14 +31,4 @@ RoundedImage{
 }
 ```
 
-### Documentation
-
-Rounded Image Component supports all Item qml Type proprities changes and some extra proprieties: 
-
-* [Item Qml Documentation](http://doc.qt.io/qt-5/qml-qtquick-item.html)
-* radius: real
-* border
-  * border.width: int
-  * border.color: color
-* backgroundcolor: color - set color of image container
-* source: url
+![Demonstration Example Image](https://ddgobkiprc33d.cloudfront.net/f326aae8-7203-4de3-9161-cf356ac4612c.gif)
